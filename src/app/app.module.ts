@@ -6,6 +6,7 @@ import { HiComponent } from './hi/hi.component';
 import { UserComponent } from './user/user.component';
 import { UsersComponent } from './users/users.component';
 import { ArticleComponent } from './article/article.component';
+import {InventoryAppModule} from './inventory/Product';
 
 
 @NgModule({
@@ -14,10 +15,11 @@ import { ArticleComponent } from './article/article.component';
     HiComponent,
     UserComponent,
     UsersComponent,
-    ArticleComponent,
+    ArticleComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    InventoryAppModule
   ],
   providers: [],
   bootstrap: [AppComponent]
