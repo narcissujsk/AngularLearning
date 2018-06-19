@@ -68,10 +68,15 @@ export class PriceDisplayComponent {
   selector: 'app-product-row',
   template: `
   <app-product-image [product]="product"></app-product-image>
-  <div class="content">
+  <div class="content" [style.background-color]="'lightblue'" >
     <div class="header">{{ product.name }}</div>
     <div class="meta">
       <div class="product-sku">SKU #{{ product.sku }}</div>
+      <div *ngIf="product.sku"> product.sku  is {{ product.sku.toLowerCase() }} </div>
+      <div [ngSwitch]="product.sku">
+        <div *ngSwitchCase='"MYSHOES"'>MYSHOES</div>
+        <div *ngSwitchDefault="">NOT MYSHOES</div>
+      </div>
     </div>
     <div class="description">
       <app-product-department [product]="product"></app-product-department>
