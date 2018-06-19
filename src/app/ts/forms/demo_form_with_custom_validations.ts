@@ -39,11 +39,12 @@ function skuValidator(control: FormControl): { [s: string]: boolean } {
                placeholder="SKU"
                [formControl]="sku">
          <div *ngIf="!sku.valid"
-           class="ui error message">SKU is invalid</div>
+           class="ui error ">SKU is invalid</div>
+         <div *ngIf="sku.valid"> sku is valid </div>
          <div *ngIf="sku.hasError('required')"
-           class="ui error message">SKU is required</div>
+           class="ui error ">SKU is required</div>
          <div *ngIf="sku.hasError('invalidSku')"
-           class="ui error message">SKU must begin with <span>123</span></div>
+           class="ui error ">SKU must begin with <span>123</span></div>
       </div>
 
       <div *ngIf="!myForm.valid"
@@ -64,6 +65,10 @@ export class DemoFormWithCustomValidations {
     });
 
     this.sku = this.myForm.controls['sku'];
+    this.sku.valueChanges.subscribe((form)=>{
+      console.log('sku change to:',form);
+    });
+
   }
 
   onSubmit(value: string): void {

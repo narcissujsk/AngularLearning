@@ -8,6 +8,7 @@ import { UsersComponent } from './users/users.component';
 import { ArticleComponent } from './article/article.component';
 import {InventoryAppModule} from './inventory/Product';
 import {FormsDemoAppModule} from './ts/app';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import {FormsDemoAppModule} from './ts/app';
   imports: [
     BrowserModule,
     InventoryAppModule,
-    FormsDemoAppModule
+    FormsDemoAppModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,8 @@ import {
   template: `
   <div class="ui raised segment">
     <h2 class="ui header">Demo Form: Sku with Builder</h2>
+    <!-- NgForm的选择器是form:not([ngNoForm]):not([ngFormGroup]).ngForm,[ngForm]
+    []属性选择器 -->
     <form [formGroup]="myForm" 
           (ngSubmit)="onSubmit(myForm.value)"
           class="ui form">
