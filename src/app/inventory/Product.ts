@@ -1,8 +1,7 @@
 import {Component, EventEmitter, HostBinding, Input, OnInit, Output} from '@angular/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import {UserComponent} from '../user/user.component';
+
 
 export class  Product {
   constructor(
@@ -89,7 +88,13 @@ export class ProductRowComponent {
 /**
  * @ProductsList: A component for rendering all ProductRows and
  * storing the currently selected Product
+ * 在视图中,使用(output)='action'语法来监听事件
+ * EventEmitter事件触发器
+ * subscribe订阅
+ *  this.productSelected = new EventEmitter();
+ *  把一个eventemitter赋值给一个输出时,angular会自动帮我们订阅事件
  */
+
 @Component({
   selector: 'app-products-list',
   template: `
@@ -124,7 +129,9 @@ export class ProductsListComponent {
   constructor() {
     this.productSelected = new EventEmitter();
   }
-
+  // productSelected赋值为一个事件触发器
+  // productSelected.emit时触发事件
+  // app-inventory-app中监听这个事件
   clicked(product: Product): void {
     this.currentProduct = product;
     this.productSelected.emit(product);
@@ -141,6 +148,8 @@ export class ProductsListComponent {
 
 /**
  * @InventoryApp: the top-level component for our application
+ * productSelected事件触发的时候执行productWasSelected方法
+ * $event参数根据productSelected的定义为当前的Product
  */
 @Component({
   selector: 'app-inventory-app',
@@ -148,7 +157,7 @@ export class ProductsListComponent {
   <div class="inventory-app">
     <app-products-list
       [productList]="products"
-      (onProductSelected)="productWasSelected($event)">
+      (productSelected)="productWasSelected($event)">
     </app-products-list>
   </div>
   `
