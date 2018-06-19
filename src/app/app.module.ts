@@ -9,6 +9,7 @@ import { ArticleComponent } from './article/article.component';
 import {InventoryAppModule} from './inventory/Product';
 import {FormsDemoAppModule} from './forms/app';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpAppModule} from './http/HttpApp';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     InventoryAppModule,
     FormsDemoAppModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpAppModule
   ],
   providers: [],
   bootstrap: [AppComponent]
