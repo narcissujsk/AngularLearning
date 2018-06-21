@@ -7,13 +7,12 @@ import {
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { HttpModule } from '@angular/http';
-
+import {HttpClientModule} from '@angular/common/http';
 /*
  * Components
  */
-import { SimpleHTTPComponent } from './SimpleHTTPComponent';
-import { MoreHTTPRequests } from './MoreHTTPRequests';
+
+import { HTTPRequests } from './HTTPRequests';
 
 
 
@@ -23,8 +22,6 @@ import { MoreHTTPRequests } from './MoreHTTPRequests';
   selector: 'http-app',
   template: `
   <div class="container">
-    <simple-http></simple-http>
-    <hr/>
     <more-http></more-http>
     <hr/>
   </div>
@@ -36,16 +33,14 @@ class HttpApp {
 @NgModule({
   declarations: [
     HttpApp,
-    SimpleHTTPComponent,
-    MoreHTTPRequests
+    HTTPRequests
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpClientModule
   ],
   exports: [
-    SimpleHTTPComponent,
-    MoreHTTPRequests,
+    HTTPRequests,
     HttpApp
   ]
 })

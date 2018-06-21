@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {Artical} from './article/article.model';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
