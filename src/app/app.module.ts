@@ -11,7 +11,7 @@ import {FormsDemoAppModule} from './forms/app';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpAppModule,} from './http/HttpApp';
 import {DependencyInjectionAppModule} from './di/DependencyInjection';
-
+import {ObservableModule} from "./myObserable/obserable";
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +27,8 @@ import {DependencyInjectionAppModule} from './di/DependencyInjection';
     InventoryAppModule,
     HttpAppModule,
     FormsDemoAppModule,
-    DependencyInjectionAppModule
-
+    DependencyInjectionAppModule,
+    ObservableModule
   ],
   providers: [],
   exports: [

@@ -81,7 +81,7 @@
       "check-catch",
       "check-else"
     ],
-    "prefer-const": false,//这一项会在变量没有在程序段中重新赋值的时候提示使用const，这么做可以优化性能。然而，这样的设定也会引发一些问题，毕竟我们在设计的时候会考虑到后期对某些变量可能会进行修改。建议在初期开发完成，程序处理逻辑趋于稳定，进入性能优化的环节后再把这一项启用，协助检查哪些变量可以用const优化。
+    "prefer-const": false,
     "quotemark": [
       false,
       "single"

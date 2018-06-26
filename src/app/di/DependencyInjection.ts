@@ -7,9 +7,6 @@ import {
 import { NgModule } from '@angular/core';
 
 
-
-
-
 @Component({
   selector: 'app-di',
   template: `
