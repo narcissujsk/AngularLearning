@@ -12,6 +12,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpAppModule,} from './http/HttpApp';
 import {DependencyInjectionAppModule} from './di/DependencyInjection';
 import {ObservableModule} from "./myObserable/obserable";
+import { MyjqueryComponent } from './mymoudle/myjquery/myjquery.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,8 +20,7 @@ import {ObservableModule} from "./myObserable/obserable";
     UserComponent,
     UsersComponent,
     ArticleComponent,
-
-
+    MyjqueryComponent
   ],
   imports: [
     BrowserModule,
