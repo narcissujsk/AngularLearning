@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-myrouter',
-  templateUrl: './myrouter.component.html',
-  styleUrls: ['./myrouter.component.css']
+  template: `myrouter works!`,
+  styleUrls: []
 })
 export class MyrouterComponent implements OnInit {
 
