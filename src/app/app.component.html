@@ -3,15 +3,29 @@
   <h1>
     Welcome to {{ jsk }}!
   </h1>
-  <div class=""></div>
-  <!--<app-inventory-app></app-inventory-app>-->
-  <!--<forms-demo-app></forms-demo-app>-->
-  <!--<http-app></http-app>-->
-  <app-observable></app-observable>
-  <app-myjquery></app-myjquery>
-  <!--<app-di></app-di>-->
+  <base href="/">
+  <div >
+    <div style="float: left">
+      <nav>
+        <a>Navigation:</a>
+        <ul>
+          <li class="left"><a [routerLink]="['UsersComponent']"> UsersComponent</a></li>
+          <li><a [routerLink]="['MyjqueryComponent']"> MyjqueryComponent</a></li>
+        </ul>
+      </nav>
+    </div>
+   <div style="float: left ;margin: 30px;text-align:center ;width: auto;border: 1px solid #0f0f10 ;padding: 50px">
+     <router-outlet></router-outlet>
+   </div>
+
+  </div>
 
 </div>
+<br>
+<div style="height: 500px"></div>
+
+
+
 <div>
   <form class="ui  large form segment">
     <h3 class="ui header"> add a link</h3>

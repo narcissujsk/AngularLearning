@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Artical} from './article/article.model';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

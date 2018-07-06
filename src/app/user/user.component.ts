@@ -1,8 +1,11 @@
 import { Component, OnInit , Input } from '@angular/core';
 @Component({
   selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  template: `<p>
+  hello {{name}}
+</p>
+`,
+  styleUrls: []
 })
 export class UserComponent implements OnInit {
   @Input() name: string;

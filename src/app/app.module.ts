@@ -1,8 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule ,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
+import { RouterModule,
+  Router,
+  Routes} from '@angular/router';
+import {
+  LocationStrategy,
+  HashLocationStrategy
+} from '@angular/common';
 import { AppComponent  } from './app.component';
-import { HiComponent } from './hi/hi.component';
 import { UserComponent } from './user/user.component';
 import { UsersComponent } from './users/users.component';
 import { ArticleComponent } from './article/article.component';
@@ -12,15 +17,26 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpAppModule,} from './http/HttpApp';
 import {DependencyInjectionAppModule} from './di/DependencyInjection';
 import {ObservableModule} from "./myObserable/obserable";
-import { MyjqueryComponent } from './mymoudle/myjquery/myjquery.component';
+import {childroutes, MyjqueryComponent} from './mymoudle/myjquery/myjquery.component';
+import {HomeComponent} from './mymoudle/HomeComponent';
+import {AboutComponent} from './mymoudle/AboutComponent';
+import {ContactComponent} from './mymoudle/ContactComponent';
+import { MyrouterComponent } from './mymoudle/myrouter/myrouter.component';
+const routes: Routes = [
+  { path: 'MyjqueryComponent', component: MyjqueryComponent,children:childroutes },
+  { path: 'UsersComponent', component: UsersComponent }
+];
 @NgModule({
   declarations: [
     AppComponent,
-    HiComponent,
     UserComponent,
     UsersComponent,
     ArticleComponent,
-    MyjqueryComponent
+    MyjqueryComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    MyrouterComponent
   ],
   imports: [
     BrowserModule,
@@ -28,11 +44,11 @@ import { MyjqueryComponent } from './mymoudle/myjquery/myjquery.component';
     HttpAppModule,
     FormsDemoAppModule,
     DependencyInjectionAppModule,
-    ObservableModule
+    ObservableModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [ { provide: LocationStrategy, useClass: HashLocationStrategy }],
   exports: [
-    HiComponent,
     UserComponent,
     UsersComponent,
     ArticleComponent],
