@@ -6,17 +6,18 @@ import {MyJqueryService} from  './myservice';
 import {ContactComponent} from '../ContactComponent';
 import {ActivatedRoute, RouterModule, Routes} from '@angular/router';
 import {MyUsersService} from "../../users/users.component";
+import {DiSampleAppAppModule,DiSampleApp} from '../../ts/app';
 @Component({
   selector: 'app-myjquery',
   template: `myjquery works
   <hr>
-  <button id="btnTest">Service Inject</button>
-  hu
+  <button id="btnTest">Service Inject</button>    hu
   <hr>
-  <div >
+  <di-sample-app></di-sample-app>
+  <hr>
+  <div>
     <div style="float: left">
-      <nav>
-        <a>Navigation:</a>
+      <nav><a>Navigation:</a>
         <ul>
           <li><a [routerLink]="['./home']"> home</a></li>
           <li><a [routerLink]="['./about']"> about</a></li>
@@ -27,9 +28,7 @@ import {MyUsersService} from "../../users/users.component";
     <div style="float: left ;border: 1px solid #0f0f10 ;padding: 50px;margin-left: 50px">
       <router-outlet></router-outlet>
     </div>
-
-  </div>
-  `,
+  </div>    `,
   styleUrls: []
 })
 export class MyjqueryComponent implements OnInit {

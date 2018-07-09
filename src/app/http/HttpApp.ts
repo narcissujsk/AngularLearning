@@ -27,7 +27,7 @@ import { HTTPRequests } from './HTTPRequests';
   </div>
   `
 })
-class HttpApp {
+export class HttpApp {
 }
 
 @NgModule({
