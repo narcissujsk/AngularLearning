@@ -29,19 +29,19 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Angular cil
 命令以 ng generate 开头，可以缩写为 ng g
 
-###Component 
+### Component 
 ng g component my-new-component 
-###Directive 
+### Directive 
 ng g directive my-new-directive 
-###Pipe 
+### Pipe 
 ng g pipe my-new-pipe 
-###Service 
+### Service 
 ng g service my-new-service 
-###Class 
+### Class 
 ng g class my-new-class 
-###Interface 
+### Interface 
 ng g interface my-new-interface 
-###Enum 
+### Enum 
 ng g enum my-new-enum 
 ### Module
  ng g module my-module 
