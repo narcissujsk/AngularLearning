@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Inject,Injectable} from '@angular/core';
 import * as $ from 'jquery';
 import {HomeComponent} from '../HomeComponent';
 import {AboutComponent} from '../AboutComponent';
+import {MyJqueryService} from  './myservice';
 import {ContactComponent} from '../ContactComponent';
 import {ActivatedRoute, RouterModule, Routes} from '@angular/router';
 import {MyUsersService} from "../../users/users.component";
@@ -34,14 +35,16 @@ import {MyUsersService} from "../../users/users.component";
 export class MyjqueryComponent implements OnInit {
   id: string;
 
-  constructor(private myservice:MyUsersService) {
+  constructor(private myservice:MyJqueryService) {
 
   }
 
   ngOnInit() {
     console.info("MyjqueryComponent OnInit");
     $("#btnTest").on("click",()=>{
-      console.info("clicked: "+this.myservice.getValue());
+      var msg="clicked: name is:"+this.myservice.name+" value is:"+this.myservice.getValue();
+      console.info(msg);
+      alert(msg);
     });
     window.addEventListener('hashchange',function(){
       //do something
@@ -57,5 +60,6 @@ export const childroutes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'contactus', redirectTo: 'contact' }
 ];
+
 
 
