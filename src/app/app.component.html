@@ -9,12 +9,12 @@
       <nav>
         <a>Navigation:</a>
         <ul>
-          <li class="left"><a [routerLink]="['UsersComponent']"> UsersComponent</a></li>
+          <li><a [routerLink]="['UsersComponent']"> UsersComponent</a></li>
           <li><a [routerLink]="['MyjqueryComponent']"> MyjqueryComponent</a></li>
         </ul>
       </nav>
     </div>
-   <div style="float: left ;margin: 30px;text-align:center ;width: auto;border: 1px solid #0f0f10 ;padding: 50px">
+   <div style="float: left ;margin: 30px;text-align:center ;width:700px;border: 1px solid #0f0f10 ;padding: 50px">
      <router-outlet></router-outlet>
    </div>
 
@@ -22,28 +22,28 @@
 
 </div>
 <br>
-<div style="height: 500px"></div>
 
 
 
-<div>
-  <form class="ui  large form segment">
-    <h3 class="ui header"> add a link</h3>
-    <div class="field">
-      <label for="title">title:</label>
-      <input id="title" name="link" #newtitle>
-    </div>
-    <div class="field">
-      <label for="link">link:</label>
-      <input id="link" name="link" #newlink>
-    </div>
-    <button (click)="addArticle(newtitle,newlink)" class="ui positive right floated button"> Subnmit </button>
 
-  </form>
+<!--<div>-->
+  <!--<form class="ui  large form segment">-->
+    <!--<h3 class="ui header"> add a link</h3>-->
+    <!--<div class="field">-->
+      <!--<label for="title">title:</label>-->
+      <!--<input id="title" name="link" #newtitle>-->
+    <!--</div>-->
+    <!--<div class="field">-->
+      <!--<label for="link">link:</label>-->
+      <!--<input id="link" name="link" #newlink>-->
+    <!--</div>-->
+    <!--<button (click)="addArticle(newtitle,newlink)" class="ui positive right floated button"> Subnmit </button>-->
 
-  <div class="ui grid posts">
-    <app-article *ngFor="let article of sortedArticles()" [article]="article"></app-article>
-  </div>
+  <!--</form>-->
 
-</div>
+  <!--<div class="ui grid posts">-->
+    <!--<app-article *ngFor="let article of sortedArticles()" [article]="article"></app-article>-->
+  <!--</div>-->
+
+<!--</div>-->
 

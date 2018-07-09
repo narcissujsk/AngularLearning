@@ -9,11 +9,10 @@ import {
 } from '@angular/common';
 import { AppComponent  } from './app.component';
 import { UserComponent } from './user/user.component';
-import { UsersComponent } from './users/users.component';
+import { UsersComponent,MyUsersService } from './users/users.component';
 import { ArticleComponent } from './article/article.component';
 import {InventoryAppModule} from './inventory/Product';
 import {FormsDemoAppModule} from './forms/app';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpAppModule,} from './http/HttpApp';
 import {DependencyInjectionAppModule} from './di/DependencyInjection';
 import {ObservableModule} from "./myObserable/obserable";
@@ -21,7 +20,6 @@ import {childroutes, MyjqueryComponent} from './mymoudle/myjquery/myjquery.compo
 import {HomeComponent} from './mymoudle/HomeComponent';
 import {AboutComponent} from './mymoudle/AboutComponent';
 import {ContactComponent} from './mymoudle/ContactComponent';
-import { MyrouterComponent } from './mymoudle/myrouter/myrouter.component';
 const routes: Routes = [
   { path: 'MyjqueryComponent', component: MyjqueryComponent,children:childroutes },
   { path: 'UsersComponent', component: UsersComponent }
@@ -35,8 +33,7 @@ const routes: Routes = [
     MyjqueryComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent,
-    MyrouterComponent
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +44,7 @@ const routes: Routes = [
     ObservableModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ { provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [ { provide: LocationStrategy, useClass: HashLocationStrategy },MyUsersService],
   exports: [
     UserComponent,
     UsersComponent,
