@@ -6,13 +6,31 @@ import {AboutComponent} from "../AboutComponent";
 import {Routes,RouterModule} from "@angular/router";
 
 @Component({
-  selector: "",
+  selector: "MyComponent1",
   template: `
     <div>
-      mymodule1
-    </div>`
+      MyComponent1
+      <hr>
+      <div >
+        <div style="float: left">
+          <nav>
+            <a>Navigation:</a>
+            <ul>
+              <li><a [routerLink]="['UsersComponent']"> UsersComponent</a></li>
+              <li><a [routerLink]="['MyjqueryComponent']"> MyjqueryComponent</a></li>
+              <li><a [routerLink]="['FormsDemoApp']"> FormsDemoApp</a></li>
+              <li><a [routerLink]="['MyComponent1']"> MyComponent1</a></li>
+
+            </ul>
+          </nav>
+        </div>
+        <div style="float: left ;margin: 30px;text-align:center ;border: 1px solid #0f0f10 ;padding: 50px">
+          <router-outlet></router-outlet>
+        </div>
+    </div>
+  </div>`
 })
-export class MymoduleModule1 implements OnInit {
+export class MyComponent1 implements OnInit {
   constructor() {
 
   }
@@ -34,8 +52,8 @@ export const MymoduleModule1Router: Routes = [
     CommonModule,
     RouterModule.forChild(MymoduleModule1Router)
   ],
-  declarations: [MymoduleModule1],
-  exports: [MymoduleModule1]
+  declarations: [MyComponent1],
+  exports: [MyComponent1]
 })
 export class MymoduleModule {
 }

@@ -26,12 +26,13 @@ import {ContactComponent} from './mymoudle/ContactComponent';
 import {DiSampleAppAppModule} from './ts/app';
 import {ApiService} from "./ts/services/ApiService";
 import {ViewPortService} from "./ts/services/ViewPortService";
+import {MymoduleModule,MyComponent1} from "./mymoudle/mymodule/mymodule.module";
 
 const routes: Routes = [
   {path: 'MyjqueryComponent', component: MyjqueryComponent, children: childroutes},
   {path: 'UsersComponent', component: UsersComponent},
-  {path: 'FormsDemoApp', component: FormsDemoApp}
-
+  {path: 'FormsDemoApp', component: FormsDemoApp},
+  {path: 'MyComponent1', component: MyComponent1}
 ];
 
 @NgModule({
@@ -53,7 +54,8 @@ const routes: Routes = [
     FormsDemoAppModule,
     DependencyInjectionAppModule,
     ObservableModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    MymoduleModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},
     MyUsersService,

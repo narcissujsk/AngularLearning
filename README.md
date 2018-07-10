@@ -41,7 +41,7 @@ ng g service my-new-service
 ng g class my-new-class 
 ### Interface 
 ng g interface my-new-interface 
-### Enum 
+### `````__`````***```****`***Enum 
 ng g enum my-new-enum 
 ### Module
  ng g module my-module 
