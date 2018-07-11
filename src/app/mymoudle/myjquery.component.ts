@@ -1,12 +1,12 @@
 import { Component, OnInit ,Inject,Injectable} from '@angular/core';
 import * as $ from 'jquery';
-import {HomeComponent} from '../HomeComponent';
-import {AboutComponent} from '../AboutComponent';
-import {MyJqueryService} from  './myservice';
-import {ContactComponent} from '../ContactComponent';
+import {HomeComponent} from './HomeComponent';
+import {AboutComponent} from './AboutComponent';
+import {MyJqueryService} from './myservice';
+import {ContactComponent} from './ContactComponent';
 import {ActivatedRoute, RouterModule, Routes} from '@angular/router';
-import {MyUsersService} from "../../users/users.component";
-import {DiSampleAppAppModule,DiSampleApp} from '../../ts/app';
+import {MyUsersService} from "../users/users.component";
+import {DiSampleAppAppModule,DiSampleApp} from '../ts/app';
 @Component({
   selector: 'app-myjquery',
   template: `myjquery works

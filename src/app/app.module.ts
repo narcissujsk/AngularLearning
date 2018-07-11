@@ -18,21 +18,22 @@ import {FormsDemoAppModule,FormsDemoApp} from './forms/app';
 import {HttpAppModule,} from './http/HttpApp';
 import {DependencyInjectionAppModule} from './di/DependencyInjection';
 import {ObservableModule} from "./myObserable/obserable";
-import {childroutes, MyjqueryComponent} from './mymoudle/myjquery/myjquery.component';
-import {MyJqueryService} from './mymoudle/myjquery/myservice';
+import {childroutes, MyjqueryComponent} from './mymoudle/myjquery.component';
+import {MyJqueryService} from './mymoudle/myservice';
 import {HomeComponent} from './mymoudle/HomeComponent';
 import {AboutComponent} from './mymoudle/AboutComponent';
 import {ContactComponent} from './mymoudle/ContactComponent';
 import {DiSampleAppAppModule} from './ts/app';
 import {ApiService} from "./ts/services/ApiService";
 import {ViewPortService} from "./ts/services/ViewPortService";
-import {MymoduleModule,MyComponent1} from "./mymoudle/mymodule/mymodule.module";
-
+import {MymoduleModule,MyComponent1} from "./mymoudle/mymodule.module";
+import {MyreduxModule,MyReduxComponent1} from "./mymoudle/myredux.module";
 const routes: Routes = [
   {path: 'MyjqueryComponent', component: MyjqueryComponent, children: childroutes},
   {path: 'UsersComponent', component: UsersComponent},
   {path: 'FormsDemoApp', component: FormsDemoApp},
-  {path: 'MyComponent1', component: MyComponent1}
+  {path: 'MyComponent1', component: MyComponent1},
+  {path: 'MyReduxComponent1', component: MyReduxComponent1}
 ];
 
 @NgModule({
@@ -55,7 +56,8 @@ const routes: Routes = [
     DependencyInjectionAppModule,
     ObservableModule,
     RouterModule.forRoot(routes),
-    MymoduleModule
+    MymoduleModule,
+    MyreduxModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},
     MyUsersService,
