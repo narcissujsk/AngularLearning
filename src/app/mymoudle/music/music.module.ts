@@ -2,17 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import {MusicRouting} from  './music.routing';
-import {Component} from '@angular/core';
-
-import {Music,MusicAbout,MusicHome} from './music';
-
+import {Music,MusicAbout,MusicHome,PopupDirective,MessageDirective} from './music';
+import {MyDirectiveModule} from "../directive/mydirective";
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    MusicRouting
+    MusicRouting,
+    MyDirectiveModule
   ],
-  declarations: [Music,MusicAbout,MusicHome]
+  declarations: [Music,MusicAbout,MusicHome,PopupDirective,MessageDirective]
 })
 export class MusicModule { }
