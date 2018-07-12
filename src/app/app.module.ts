@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule, CUSTOM_ELEMENTS_SCHEMA, Component, Inject, ReflectiveInjector} from '@angular/core';
+import {NgModule, CUSTOM_ELEMENTS_SCHEMA, Component, Inject} from '@angular/core';
 import {
   RouterModule,
   Router,
@@ -14,25 +14,26 @@ import {UserComponent} from './user/user.component';
 import {UsersComponent, MyUsersService} from './users/users.component';
 import {ArticleComponent} from './article/article.component';
 import {InventoryAppModule} from './inventory/Product';
-import {FormsDemoAppModule,FormsDemoApp} from './forms/app';
+import {FormsDemoAppModule, FormsDemoApp} from './forms/app';
 import {HttpAppModule,} from './http/HttpApp';
 import {DependencyInjectionAppModule} from './di/DependencyInjection';
 import {ObservableModule} from "./myObserable/obserable";
 import {childroutes, MyjqueryComponent} from './mymoudle/myjquery.component';
 import {MyJqueryService} from './mymoudle/myservice';
-import {HomeComponent} from './mymoudle/HomeComponent';
-import {AboutComponent} from './mymoudle/AboutComponent';
-import {ContactComponent} from './mymoudle/ContactComponent';
+import {HomeComponent} from './mymoudle/component/HomeComponent';
+import {AboutComponent} from './mymoudle/component/AboutComponent';
+import {ContactComponent} from './mymoudle/component/ContactComponent';
 import {DiSampleAppAppModule} from './ts/app';
 import {ApiService} from "./ts/services/ApiService";
 import {ViewPortService} from "./ts/services/ViewPortService";
-import {MymoduleModule,MyComponent1} from "./mymoudle/mymodule.module";
-import {MyreduxModule,MyReduxComponent1} from "./mymoudle/myredux.module";
+import {MymoduleModule, MyComponent1} from "./mymoudle/mymodule.module";
+import {MyreduxModule, MyReduxComponent1} from "./mymoudle/myredux.module";
 const routes: Routes = [
   {path: 'MyjqueryComponent', component: MyjqueryComponent, children: childroutes},
   {path: 'UsersComponent', component: UsersComponent},
   {path: 'FormsDemoApp', component: FormsDemoApp},
   {path: 'MyComponent1', component: MyComponent1},
+  {path: "music", loadChildren: "./mymoudle/music/music.module#MusicModule"},
   {path: 'MyReduxComponent1', component: MyReduxComponent1}
 ];
 
@@ -48,8 +49,8 @@ const routes: Routes = [
     ContactComponent
   ],
   imports: [
-    DiSampleAppAppModule,
     BrowserModule,
+    DiSampleAppAppModule,
     InventoryAppModule,
     HttpAppModule,
     FormsDemoAppModule,

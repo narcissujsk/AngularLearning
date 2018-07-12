@@ -1,9 +1,9 @@
 import { Component, OnInit ,Inject,Injectable} from '@angular/core';
 import * as $ from 'jquery';
-import {HomeComponent} from './HomeComponent';
-import {AboutComponent} from './AboutComponent';
+import {HomeComponent} from './component/HomeComponent';
+import {AboutComponent} from './component/AboutComponent';
 import {MyJqueryService} from './myservice';
-import {ContactComponent} from './ContactComponent';
+import {ContactComponent} from './component/ContactComponent';
 import {ActivatedRoute, RouterModule, Routes} from '@angular/router';
 import {MyUsersService} from "../users/users.component";
 import {DiSampleAppAppModule,DiSampleApp} from '../ts/app';

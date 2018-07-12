@@ -1,8 +1,8 @@
 import {Component, NgModule, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {HomeComponent} from "./HomeComponent";
-import {ContactComponent} from "./ContactComponent";
-import {AboutComponent} from "./AboutComponent";
+import {HomeComponent} from "./component/HomeComponent";
+import {ContactComponent} from "./component/ContactComponent";
+import {AboutComponent} from "./component/AboutComponent";
 import {Routes, RouterModule} from "@angular/router";
 import * as $ from 'jquery';
 import {Observable, Subject, asapScheduler, pipe, of, from, interval, merge, fromEvent} from 'rxjs';
