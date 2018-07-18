@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
 import {HttpClient,HttpClientJsonpModule} from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import * as $ from 'jquery';
-import { Jsonp} from "@angular/http";
 @Component({
   selector: 'more-http',
   template: `
