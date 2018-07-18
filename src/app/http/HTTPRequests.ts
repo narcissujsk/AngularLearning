@@ -4,11 +4,12 @@
 import { Component } from '@angular/core';
 import {HttpClient,HttpClientJsonpModule} from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
+import * as $ from 'jquery';
 @Component({
   selector: 'more-http',
   template: `
     <div id="id001">
-      id001 git test gg
+      id001
     </div>
     <hr>
   <h2>More Requests</h2>
