@@ -2,17 +2,23 @@
  * Angular
  */
 import { Component } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient,HttpClientJsonpModule} from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
+import * as $ from 'jquery';
+import { Jsonp} from "@angular/http";
 @Component({
   selector: 'more-http',
   template: `
+    <div id="id001">
+      id001
+    </div>
+    <hr>
   <h2>More Requests</h2>
   <button type="button" (click)="makeGet()">Make Get</button>
   <button type="button" (click)="makePost()">Make Post</button>
   <button type="button" (click)="makeDelete()">Make Delete</button>
   <button type="button" (click)="makeHeaders()">Make Headers</button>
-  <button type="button" (click)="makeSearch()">Make Search</button>
+  <button type="button" (click)="makeSearch()">UsersList</button>
   <div *ngIf="loading">loading...</div>
   <pre>{{data | json}}</pre>
 `
@@ -70,17 +76,19 @@ export class HTTPRequests {
       });
   }
 
+   back ():void{
+
+  }
   makeSearch(): void {
-    let headers: HttpHeaders = new HttpHeaders();
-    headers.append('user-agent', 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/' +
-      '537.36 (KHTML, like Gecko) Chrome/66.0.3343.4 Safari/537.36');
-    headers.append('Referer', 'https://alpha.wallhaven.cc/search?q=tree&categories=111&purity=110&sorting=random&order=desc');
-    headers.append('referer', 'https://alpha.wallhaven.cc/search?q=tree&categories=111&purity=110&sorting=random&order=desc');
-    headers.append('Access-Control-Allow-Origin', '*');
-    this.httpclient.get('https://developers.google.com/', {headers})
+
+    var url="/users/list";
+
+    this.httpclient.get(url)
       .subscribe((res) => {
+        console.log(res);
         this.data = res;
       });
+
   }
   //https://alpha.wallhaven.cc/search?q=tree&categories=111&purity=110&sorting=random&order=desc
 }

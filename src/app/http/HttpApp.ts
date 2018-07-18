@@ -7,7 +7,7 @@ import {
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule,HttpClientJsonpModule} from '@angular/common/http';
 /*
  * Components
  */
@@ -37,7 +37,8 @@ export class HttpApp {
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpClientJsonpModule
   ],
   exports: [
     HTTPRequests,

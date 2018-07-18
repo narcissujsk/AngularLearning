@@ -15,7 +15,7 @@ import {UsersComponent, MyUsersService} from './users/users.component';
 import {ArticleComponent} from './article/article.component';
 import {InventoryAppModule} from './inventory/Product';
 import {FormsDemoAppModule, FormsDemoApp} from './forms/app';
-import {HttpAppModule,} from './http/HttpApp';
+import {HttpApp, HttpAppModule,} from './http/HttpApp';
 import {DependencyInjectionAppModule} from './di/DependencyInjection';
 import {ObservableModule} from "./myObserable/obserable";
 import {childroutes, MyjqueryComponent} from './mymoudle/myjquery.component';
@@ -28,13 +28,16 @@ import {ApiService} from "./ts/services/ApiService";
 import {ViewPortService} from "./ts/services/ViewPortService";
 import {MymoduleModule, MyComponent1} from "./mymoudle/mymodule.module";
 import {MyreduxModule, MyReduxComponent1} from "./mymoudle/myredux.module";
+import {TabsSampleApp, TabsSampleAppModule} from './mymoudle/tab/tabs';
 const routes: Routes = [
   {path: 'MyjqueryComponent', component: MyjqueryComponent, children: childroutes},
   {path: 'UsersComponent', component: UsersComponent},
   {path: 'FormsDemoApp', component: FormsDemoApp},
   {path: 'MyComponent1', component: MyComponent1},
   {path: "music", loadChildren: "./mymoudle/music/music.module#MusicModule"},
-  {path: 'MyReduxComponent1', component: MyReduxComponent1}
+  {path: 'MyReduxComponent1', component: MyReduxComponent1},
+  {path: 'tabs', component: TabsSampleApp},
+  {path: 'https', component: HttpApp}
 ];
 
 @NgModule({
@@ -58,7 +61,8 @@ const routes: Routes = [
     ObservableModule,
     RouterModule.forRoot(routes),
     MymoduleModule,
-    MyreduxModule
+    MyreduxModule,
+    TabsSampleAppModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},
     MyUsersService,

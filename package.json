@@ -5,7 +5,7 @@
     "ng": "ng",
     "ng generate component": "ng generate component ",
     "install": "npm install",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.config.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

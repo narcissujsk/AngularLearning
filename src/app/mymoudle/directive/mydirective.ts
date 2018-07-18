@@ -1,4 +1,15 @@
-import {Component, Directive, ElementRef, HostBinding, HostListener, Input, NgModule} from "@angular/core";
+import {
+  Component,
+  Directive,
+  ElementRef,
+  HostBinding,
+  HostListener,
+  Input,
+  NgModule,
+  QueryList,
+  AfterContentInit,
+  ContentChildren
+} from "@angular/core";
 
 import {RouterModule} from "@angular/router";
 import {CommonModule} from "@angular/common";
@@ -43,24 +54,6 @@ export class Message {
     console.log('header:', this.header);
   }
 }
-
-@Component({
-  selector: 'tab',
-  template: `
-    <div class="ui message bottom attached tab segment">
-      <ng-content></ng-content>
-    </div>
-  `
-})
-export class Tab {
-  @Input() title: string;
-  active: boolean = false;
-  name: string;
-}
-
-
-
-
 
 @NgModule({
   imports: [
